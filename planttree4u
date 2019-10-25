@@ -6,22 +6,23 @@ public class plantingtrees {
 			   int numbertrees2 = numbertrees.nextInt();
 			   Scanner treedays = new Scanner(System.in);
 			   int iterating = numbertrees2;
-			   ArrayList<Integer> Array = new ArrayList<Integer>(20);
+			   ArrayList<Integer> Array = new ArrayList<Integer>();
 			   int days = 0;
 			   int changing = 0;
-		   			while (numbertrees2 > 1) {
+		   		while (numbertrees2 > 1) {
 			   		int treedays2 = treedays.nextInt();
 			   		numbertrees2--;
 				   	Array.add(treedays2);
 			   }
-		   			int highestnumber = 0;
-		   			int challenger = 0;
-		   			int highestarrayspot = 0;
-		   			int arraysizechecker = 0;
-		   			int arraylengh = Array.size();
-		   			int countingup = 0;
-				    ArrayList<Integer> orderedtrees = new ArrayList<Integer>(20);
-		   			while (iterating > 0) {
+		   		
+		   		int challenger = 0;
+		   		int highestarrayspot = 0;
+		   		int arraysizechecker = 0;
+		   		int arraylengh = Array.size();
+		   		int countingup = 0;
+		   		int highestnumber = 0;
+			    ArrayList<Integer> orderedtrees = new ArrayList<Integer>();
+		   		while (iterating > 0) {
 		   			while (arraysizechecker < arraylengh) {
 			   			System.out.println("doube while");
 		   				highestnumber = Array.get(arraysizechecker);
@@ -34,12 +35,14 @@ public class plantingtrees {
 		   				}
 		   			}
 		   			System.out.println("after if");
-				   	
-		   			Array.remove(highestarrayspot);
-		   			orderedtrees.add(highestnumber);
 		   			
+		   			//Array.remove(highestarrayspot);
+		   			//orderedtrees.add(highestnumber);  //this right here is the problem software
+		   			int i = Array.set(highestarrayspot, 0); 
+		   			orderedtrees.add(highestnumber);
 		   			countingup++;
-		   			arraylengh = orderedtrees.size()-1;
+		   			//arraylengh = orderedtrees.size()-1;
+		   			
 		   			while (arraylengh > 0) {
 			   			System.out.println("arraylengh while");
 		   				changing = Array.get(arraylengh)-1;
@@ -49,6 +52,7 @@ public class plantingtrees {
 	 		   			System.out.println("afterlengh while");
 		   			}
 		   			System.out.println(days);
+		   			
 		   			}		
 		   }
 }
