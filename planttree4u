@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner; 
+public class plantingtrees {
+		   public static void main(String[] args){
+			   Scanner numbertrees = new Scanner(System.in);
+			   int numbertrees2 = numbertrees.nextInt();
+			   Scanner treedays = new Scanner(System.in);
+			   int iterating = numbertrees2;
+			   ArrayList<Integer> Array = new ArrayList<Integer>(5);
+			   int days = 0;
+			   int changing = 0;
+		   			while (numbertrees2 > 1) {
+			   		int treedays2 = treedays.nextInt();
+			   		numbertrees2--;
+				   	Array.add(treedays2);
+				   	
+		   			
+				   	
+
+			   }
+		   			
+		   			int highestnumber = 0;
+		   			int challenger = 0;
+		   			int highestarrayspot = 0;
+		   			int arraysizechecker = 0;
+		   			int arraylengh = Array.size();
+		   			int countingup = 0;
+				   //	int orderedtrees[];
+				   //	orderedtrees = new int[iterating + 1];	
+				    ArrayList<Integer> orderedtrees = new ArrayList<Integer>(5);
+					
+				   	
+		   			while (iterating > 0) {
+		   			while (arraysizechecker < arraylengh) {
+			   			System.out.println("doube while");
+					   	
+		   				highestnumber = Array.get(arraysizechecker);
+		   				challenger = Array.get(arraysizechecker) + 1;
+		   				arraysizechecker++;
+		   				if (highestnumber > challenger) {
+		   		   			System.out.println("if in double while");
+		   				   	
+		   					highestnumber = challenger;
+		   					highestarrayspot = arraysizechecker;
+		   				}
+		   			}
+		   			System.out.println("after if");
+				   	
+		   			Array.remove(highestarrayspot);
+		   			orderedtrees.add(highestnumber);
+		   			
+		   			countingup++;
+		   			arraylengh = orderedtrees.size();
+		   			while (arraylengh > 0) {
+			   			System.out.println("arraylengh while");
+					   	
+		   				
+		   				changing = Array.get(arraylengh)-1;
+						orderedtrees.set(arraylengh, changing);
+	 					arraylengh--;
+	 					days++;
+	 		   			System.out.println("afterlengh while");
+	 				   	
+		   			}
+		   			System.out.println(days);
+		   			}		
+		   }
+}
